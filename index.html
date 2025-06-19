@@ -1,120 +1,128 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hayeon's Homework Index</title>
     <style>
-        /* 기본 스타일 초기화 및 설정 */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+      /* 기본 스타일 초기화 및 설정 */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+      }
 
-        /* 메인 콘텐츠 컨테이너 */
-        .container {
-            width: 100%;
-            max-width: 600px;
-            background-color: #ffffff;
-            padding: 30px 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+      /* 메인 콘텐츠 컨테이너 */
+      .container {
+        width: 100%;
+        max-width: 600px;
+        background-color: #ffffff;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
 
-        /* 제목 스타일 */
-        h1 {
-            color: #1c1e21;
-            margin-bottom: 10px;
-            font-size: 28px;
-        }
+      /* 제목 스타일 */
+      h1 {
+        color: #1c1e21;
+        margin-bottom: 10px;
+        font-size: 28px;
+      }
 
-        p {
-            color: #606770;
-            margin-bottom: 30px;
-            font-size: 16px;
-        }
+      p {
+        color: #606770;
+        margin-bottom: 30px;
+        font-size: 16px;
+      }
 
-        /* 카테고리 제목 스타일 */
-        h2 {
-            font-size: 22px;
-            color: #333;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 8px;
-            margin-top: 30px;
-            margin-bottom: 20px;
-            text-align: left;
-        }
+      /* 카테고리 제목 스타일 */
+      h2 {
+        font-size: 22px;
+        color: #333;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 8px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-align: left;
+      }
 
-        /* 링크 목록 스타일 */
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+      /* 링크 목록 스타일 */
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
 
-        li {
-            margin-bottom: 10px;
-        }
+      li {
+        margin-bottom: 10px;
+      }
 
-        /* 링크 버튼 스타일 */
-        a {
-            display: block;
-            background-color: #007bff;
-            color: #ffffff;
-            padding: 12px 15px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 500;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-        }
+      /* 링크 버튼 스타일 */
+      a {
+        display: block;
+        background-color: #007bff;
+        color: #ffffff;
+        padding: 12px 15px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+      }
 
-        /* 링크에 마우스를 올렸을 때 효과 */
-        a:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px); /* 살짝 위로 이동하는 효과 */
-        }
+      /* 링크에 마우스를 올렸을 때 효과 */
+      a:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px); /* 살짝 위로 이동하는 효과 */
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="container">
-        <h1>HTML 과제 목록</h1>
-        <p>아래 목록에서 확인할 페이지를 클릭하세요.</p>
+      <h1>HTML 과제 목록</h1>
+      <p>아래 목록에서 확인할 페이지를 클릭하세요.</p>
 
-        <div class="links-section">
-            <h2>📝 양식 (Forms)</h2>
-            <ul>
-                <li><a href="form1.html">form1.html</a></li>
-                <li><a href="form11.html">form11.html</a></li>
-                <li><a href="form13.html">form13.html</a></li>
-                <li><a href="form4.html">form4.html</a></li>
-                <li><a href="form6.html">form6.html</a></li>
-                <li><a href="form7.html">form7.html</a></li>
-            </ul>
+      <div class="links-section">
+        <h2>📝 양식 (Forms)</h2>
+        <ul>
+          <li><a href="form5.html">form5.html</a></li>
+          <li><a href="form3.html">form3.html</a></li>
+          <li><a href="form2.html">form2.html</a></li>
+          <li><a href="form1.html">form1.html</a></li>
+          <li><a href="form11.html">form11.html</a></li>
+          <li><a href="form13.html">form13.html</a></li>
+          <li><a href="form4.html">form4.html</a></li>
+          <li><a href="form6.html">form6.html</a></li>
+          <li><a href="form7.html">form7.html</a></li>
+        </ul>
 
-            <h2>📄 목록 (Lists)</h2>
-            <ul>
-                <li><a href="list14.html">list14.html</a></li>
-            </ul>
+        <h2>📄 목록 (Lists)</h2>
+        <ul>
+          <li><a href="list9.html">list9.html</a></li>
+          <li><a href="list8.html">list8.html</a></li>
+          <li><a href="list7.html">list7.html</a></li>
+          <li><a href="list6.html">list6.html</a></li>
+          <li><a href="list5.html">list5.html</a></li>
+          <li><a href="list4.html">list4.html</a></li>
+          <li><a href="list2.html">list2.html</a></li>
+          <li><a href="list14.html">list14.html</a></li>
+        </ul>
 
-            <h2>📊 표 (Tables)</h2>
-            <ul>
-                <li><a href="table1.html">table1.html</a></li>
-                <li><a href="table2.html">table2.html</a></li>
-                <li><a href="table4.html">table4.html</a></li>
-                <li><a href="table7.html">table7.html</a></li>
-            </ul>
-        </div>
+        <h2>📊 표 (Tables)</h2>
+        <ul>
+          <li><a href="table7.html">table7.html</a></li>
+          <li><a href="table1.html">table1.html</a></li>
+          <li><a href="table2.html">table2.html</a></li>
+          <li><a href="table4.html">table4.html</a></li>
+        </ul>
+      </div>
     </div>
-
-</body>
+  </body>
 </html>
