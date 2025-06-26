@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -122,7 +122,255 @@
           <li><a href="table2.html">table2.html</a></li>
           <li><a href="table4.html">table4.html</a></li>
         </ul>
+        <h2>게시판 (Learning)</h2>
+        <ul>
+          <li><a href="./02Website/pages/learning1-1.html">learning1-1.html</a></li>
+        </ul>
       </div>
     </div>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hayeon's Homework Index - Accordion</title>
+    <style>
+      /* 기본 스타일 초기화 및 설정 */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; /* 상단 정렬로 변경 */
+        min-height: 100vh;
+        margin: 0;
+        padding: 40px 20px; /* 상단 여백 추가 */
+        box-sizing: border-box;
+      }
+
+      /* 메인 콘텐츠 컨테이너 */
+      .container {
+        width: 100%;
+        max-width: 700px; /* 너비 약간 늘림 */
+        background-color: #ffffff;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* 그림자 강화 */
+        text-align: center;
+      }
+
+      /* 제목 스타일 */
+      h1 {
+        color: #1c1e21;
+        margin-bottom: 10px;
+        font-size: 32px; /* 글씨 크기 키움 */
+      }
+
+      p {
+        color: #606770;
+        margin-bottom: 30px;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+
+      /* 아코디언 섹션 스타일 */
+      .accordion-item {
+        background-color: #f9f9f9;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 12px; /* 항목 간 간격 */
+        overflow: hidden; /* 내용 숨김 처리 */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+
+      /* 아코디언 헤더 (클릭 가능한 부분) */
+      .accordion-header {
+        background-color: #e9ecef;
+        padding: 15px 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 600;
+        color: #343a40;
+        transition: background-color 0.3s ease;
+      }
+
+      .accordion-header:hover {
+        background-color: #dee2e6;
+      }
+
+      /* 헤더에 있는 화살표 아이콘 */
+      .accordion-header::after {
+        content: "+"; /* 닫혀 있을 때 + 기호 */
+        font-size: 24px;
+        line-height: 1;
+        transition: transform 0.3s ease;
+        transform: rotate(0deg); /* 초기 상태 */
+      }
+
+      /* 아코디언이 열렸을 때 헤더와 화살표 스타일 */
+      .accordion-item.active .accordion-header {
+        background-color: #007bff;
+        color: #ffffff;
+      }
+
+      .accordion-item.active .accordion-header::after {
+        content: "−"; /* 열려 있을 때 - 기호 */
+        transform: rotate(180deg); /* 회전시켜 방향 변경 */
+      }
+
+      /* 아코디언 내용 */
+      .accordion-content {
+        max-height: 0; /* 초기에는 숨김 */
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* 부드러운 전환 */
+        padding: 0 20px; /* 초기 패딩 0 */
+      }
+
+      /* 아코디언 내용이 열렸을 때 */
+      .accordion-item.active .accordion-content {
+        max-height: 500px; /* 충분히 큰 값으로 설정하여 내용이 다 보이게 함 */
+        padding: 15px 20px; /* 열렸을 때 패딩 */
+        border-top: 1px solid #e0e0e0; /* 상단 구분선 */
+      }
+
+      /* 링크 목록 스타일 (내용 안) */
+      .accordion-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .accordion-content li {
+        margin-bottom: 8px;
+      }
+
+      .accordion-content li:last-child {
+        margin-bottom: 0; /* 마지막 항목 하단 마진 제거 */
+      }
+
+      /* 링크 버튼 스타일 (내용 안) */
+      .accordion-content a {
+        display: block;
+        background-color: #6c757d; /* 아코디언 내부 링크 색상 변경 */
+        color: #ffffff;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 15px;
+        font-weight: 500;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+      }
+
+      /* 링크에 마우스를 올렸을 때 효과 */
+      .accordion-content a:hover {
+        background-color: #495057;
+        transform: translateY(-1px); /* 살짝 위로 이동하는 효과 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hayeon's HTML 과제 목록</h1>
+      <p>아래 카테고리를 클릭하여 과제 목록을 확인하세요.</p>
+
+      <div class="accordion-container">
+        <div class="accordion-item">
+          <div class="accordion-header">📝 양식 (Forms)</div>
+          <div class="accordion-content">
+            <ul>
+              <li><a href="form5.html">form5</a></li>
+              <li><a href="form3.html">form3</a></li>
+              <li><a href="form2.html">form2</a></li>
+              <li><a href="form1.html">form1</a></li>
+              <li><a href="form11.html">form11</a></li>
+              <li><a href="form13.html">form13</a></li>
+              <li><a href="form4.html">form4</a></li>
+              <li><a href="form6.html">form6</a></li>
+              <li><a href="form7.html">form7</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">📄 목록 (Lists)</div>
+          <div class="accordion-content">
+            <ul>
+              <li><a href="list9.html">list9</a></li>
+              <li><a href="list8.html">list8</a></li>
+              <li><a href="list7.html">list7</a></li>
+              <li><a href="list6.html">list6</a></li>
+              <li><a href="list5.html">list5</a></li>
+              <li><a href="list4.html">list4</a></li>
+              <li><a href="list2.html">list2</a></li>
+              <li><a href="list14.html">list14</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">📊 표 (Tables)</div>
+          <div class="accordion-content">
+            <ul>
+              <li><a href="table7.html">table7</a></li>
+              <li><a href="table1.html">table1</a></li>
+              <li><a href="table2.html">table2</a></li>
+              <li><a href="table4.html">table4</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">🏠 메인 (Main)</div>
+          <div class="accordion-content">
+            <ul>
+              <li><a href="./02Website/main.html">main</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">🧑‍💻 게시판 (Learning)</div>
+          <div class="accordion-content">
+            <ul>
+              <li><a href="./02Website/pages/learning1-1.html">learning1-1</a></li>
+              <li><a href="./02Website/pages/learning2-1.html">learning2-1</a></li>
+              <li><a href="./02Website/pages/learning2-3.html">learning2-3</a></li>
+              <!-- <li><a href="./02Website/pages/learning1-1.html">learning2-5</a></li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // JavaScript로 아코디언 기능 구현
+      document.addEventListener("DOMContentLoaded", function () {
+        const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+        accordionHeaders.forEach((header) => {
+          header.addEventListener("click", function () {
+            // 현재 클릭된 헤더의 부모(.accordion-item)를 찾습니다.
+            const accordionItem = this.parentNode;
+
+            // 모든 아코디언 항목에서 'active' 클래스를 제거합니다.
+            // (하나만 열리게 하려면 이 부분을 사용)
+            accordionHeaders.forEach((otherHeader) => {
+              if (otherHeader.parentNode !== accordionItem) {
+                otherHeader.parentNode.classList.remove("active");
+              }
+            });
+
+            // 현재 클릭된 항목에 'active' 클래스를 토글(추가/제거)합니다.
+            accordionItem.classList.toggle("active");
+          });
+        });
+      });
+    </script>
   </body>
 </html>
