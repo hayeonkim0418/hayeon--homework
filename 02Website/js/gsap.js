@@ -81,12 +81,12 @@ export const ALARM = () => {
   /* 알람 갯수 체크, 삭제 이벤트 */
   const Del = () => {
     const delButtons = document.querySelectorAll(".alram__del");
-    const li = document.querySelector(".alram > ul > li");
+    const lis = document.querySelectorAll(".alram > ul > li");
     count.textContent = alramData.length;
 
     delButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        li.remove();
+      btn.addEventListener("click", (e) => {
+        e.target.closest("li").remove();
         alramData.pop();
         count.textContent = alramData.length;
         if (alramData.length === 0) {
